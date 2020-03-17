@@ -20,6 +20,7 @@ export default () => {
           node {
             frontmatter {
               date
+              keyword
             }
             fields {
               slug
@@ -63,7 +64,7 @@ export default () => {
     
       <PostListWrapper>
         {data.allMarkdownRemark.edges.map(({node}) => (
-          <PostListItem date={node.fields.slug} tag="adsfasdf" />
+          <PostListItem slug={node.fields.slug} tag={node.frontmatter.keyword} />
         ))}
       </PostListWrapper>
       </ContentWrapper>

@@ -2,10 +2,10 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 
-const PostListItem = ({ date, tag }) => (
+const PostListItem = ({ slug, tag }) => (
   <Wrapper>
-    <Link to={`/post/${date}`} style={{ textDecoration: "none" }}>
-      <div>{date}</div>
+    <Link to={`/post/${slug}`} style={{ textDecoration: "none" }}>
+      <div>{slug}</div>
       <SubTitle>{tag}</SubTitle>
     </Link>
   </Wrapper>
