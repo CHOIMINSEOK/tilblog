@@ -2,18 +2,31 @@ import React from 'react'
 import styled from 'styled-components'
 import * as base from '../components/base/index.js'
 import RoundedOutlinBox from '../components/RoundedOutlineBox'
+import { graphql, useStaticQuery } from 'gatsby'
 
 export default () => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          subtitle
+          description
+        }
+      }
+    }
+  `)
+
   return (
     <Wrapper>
       <Header>
         <base.VerticalSpacer size={40} />
         <Title>
-          최민석
-          <Subtitle>/ Minseok Choi</Subtitle>
+          {data.site.siteMetadata.title}
+          <Subtitle>{data.site.siteMetadata.subtitle}</Subtitle>
         </Title>
         <base.VerticalSpacer size={10} />
-        <Description>Get motivated from every challenges. </Description>
+        <Description>{data.site.siteMetadata.description} </Description>
         <base.VerticalSpacer size={10} />
         <div style={{ display: 'flex' }}>
           <RoundedOutlinBox label="Résumé" to="/resume" external={false} />
@@ -54,6 +67,7 @@ const Title = styled.div`
   color: #555555;
   display: flex;
   flex-direction: row;
+  margin-bottom: 2px;
 `
 
 const Subtitle = styled.div`
@@ -61,15 +75,10 @@ const Subtitle = styled.div`
   font-size: 30px;
   color: #999999;
   margin-left: 12px;
-  margin-bottom: 2px;
   align-self: flex-end;
 `
 
 const Description = styled.div`
   font-size: 20px;
   color: #333333;
-`
-
-const LI = styled.li`
-  margin-left: 0px;
 `
