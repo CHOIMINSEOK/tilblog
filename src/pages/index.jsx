@@ -67,7 +67,6 @@ const Title = styled.div`
   color: #555555;
   display: flex;
   flex-direction: row;
-  margin-bottom: 2px;
 `
 
 const Subtitle = styled.div`
@@ -76,6 +75,7 @@ const Subtitle = styled.div`
   color: #999999;
   margin-left: 12px;
   align-self: flex-end;
+  margin-bottom: 2px;
 `
 
 const Description = styled.div`

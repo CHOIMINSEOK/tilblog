@@ -72,7 +72,7 @@ const Wrapper = styled.div`
   aligh-itemsfont-family: 'Apple SD Gothic Neo', 'Helvetica', 'Arial';
 `
 
-const Label = styled.div`
+const Label = styled.p`
   font-weight: bold;
 `
 
