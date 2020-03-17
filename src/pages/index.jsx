@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import * as base from '../components/base/index.js'
 import RoundedOutlinBox from '../components/RoundedOutlineBox'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery, Link } from 'gatsby'
+import PostListItem from '../components/PostListItem.jsx'
 
 export default () => {
   const data = useStaticQuery(graphql`
@@ -14,11 +15,25 @@ export default () => {
           description
         }
       }
+      allMarkdownRemark {
+        edges {
+          node {
+            frontmatter {
+              date
+            }
+            fields {
+              slug
+            }
+          }
+        }
+      }
     }
   `)
 
+
   return (
     <Wrapper>
+      <ContentWrapper>
       <Header>
         <base.VerticalSpacer size={40} />
         <Title>
@@ -44,6 +59,14 @@ export default () => {
           />
         </div>
       </Header>
+      <base.VerticalSpacer size={20} />
+    
+      <PostListWrapper>
+        {data.allMarkdownRemark.edges.map(({node}) => (
+          <PostListItem date={node.fields.slug} tag="adsfasdf" />
+        ))}
+      </PostListWrapper>
+      </ContentWrapper>
     </Wrapper>
   )
 }
@@ -54,6 +77,9 @@ const Wrapper = styled.div`
   align-items: center;
   font-family: 'Apple SD Gothic Neo', 'Helvetica', 'Arial';
 `
+
+const ContentWrapper = styled.div``
+
 const Header = styled.div`
   display: flex;
   flex-direction: column;
@@ -81,4 +107,7 @@ const Subtitle = styled.div`
 const Description = styled.div`
   font-size: 20px;
   color: #333333;
+`
+
+const PostListWrapper = styled.div`
 `
