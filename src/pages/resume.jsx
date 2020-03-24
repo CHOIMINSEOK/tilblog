@@ -21,7 +21,7 @@ const Resume = () => {
       <h2>Summary</h2>
       <Label>Skills</Label>
       <ul>
-        <li>Language: Kotlin, Java, Swift, Javascript, Typescript</li>
+        <li>Language: Kotlin, Java, Swift, Typescript, Javascript </li>
         <li>Mobile Development: Native Android, Native iOS, React Native</li>
         <li>Web Framework: React </li>
         <li>CI: Bitrise </li>
@@ -35,20 +35,23 @@ const Resume = () => {
       <Label>
         Sep. 2017- <a href="https://minding.today">Minding</a>
       </Label>
-      Native Android
+      Native Android / <a href="https://play.google.com/store/apps/details?id=today.minding">MindingApp</a>
       <ul>
         <li>Kotlin</li>
         <li>Retrofit2</li>
         <li>RxJava</li>
         <li>Databinding</li>
       </ul>
-      Native iOS
+      Native iOS / <a href="https://apps.apple.com/us/app/%EB%A7%88%EC%9D%B8%EB%94%A9-%EB%82%98%EB%A5%BC-%EC%9C%84%ED%95%9C-%EB%A7%88%EC%9D%8C%EC%8A%B5%EA%B4%80/id1447465396">MindingApp</a>
       <ul>
         <li>Swift</li>
         <li>Moya</li>
         <li>RxSwift, RxCocoa</li>
+        <li>ReSwift</li>
       </ul>
-      React Native
+      React Native / not deployed
+
+
       <h2>Outsourcing Projects</h2>
       <Label>KT BDAS System with Samsung SDS</Label>I implemented a module that
       handled its own databases using Java. The database had millions of
