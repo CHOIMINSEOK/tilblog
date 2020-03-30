@@ -15,7 +15,12 @@ export default () => {
           description
         }
       }
-      allMarkdownRemark {
+      allMarkdownRemark (
+        sort: {
+          fields: [frontmatter___date]
+          order: DESC
+        }
+      ) {
         edges {
           node {
             frontmatter {
@@ -35,38 +40,38 @@ export default () => {
   return (
     <Wrapper>
       <ContentWrapper>
-      <Header>
-        <base.VerticalSpacer size={40} />
-        <Title>
-          {data.site.siteMetadata.title}
-          <Subtitle>{data.site.siteMetadata.subtitle}</Subtitle>
-        </Title>
-        <base.VerticalSpacer size={10} />
-        <Description>{data.site.siteMetadata.description} </Description>
-        <base.VerticalSpacer size={10} />
-        <div style={{ display: 'flex' }}>
-          <RoundedOutlinBox label="Résumé" to="/resume" external={false} />
-          <div style={{ width: '4px' }} />
-          <RoundedOutlinBox
-            label="Github"
-            to="https://github.com/CHOIMINSEOK"
-            external
-          />
-          <div style={{ width: '4px' }} />
-          <RoundedOutlinBox
-            label="Brunch"
-            to="https://brunch.co.kr/@dotori"
-            external
-          />
-        </div>
-      </Header>
-      <base.VerticalSpacer size={20} />
-    
-      <PostListWrapper>
-        {data.allMarkdownRemark.edges.map(({node}) => (
-          <PostListItem slug={node.fields.slug} tag={node.frontmatter.keyword} />
-        ))}
-      </PostListWrapper>
+        <Header>
+          <base.VerticalSpacer size={40} />
+          <Title>
+            {data.site.siteMetadata.title}
+            <Subtitle>{data.site.siteMetadata.subtitle}</Subtitle>
+          </Title>
+          <base.VerticalSpacer size={10} />
+          <Description>{data.site.siteMetadata.description} </Description>
+          <base.VerticalSpacer size={10} />
+          <div style={{ display: 'flex' }}>
+            <RoundedOutlinBox label="Résumé" to="/resume" external={false} />
+            <div style={{ width: '4px' }} />
+            <RoundedOutlinBox
+              label="Github"
+              to="https://github.com/CHOIMINSEOK"
+              external
+            />
+            <div style={{ width: '4px' }} />
+            <RoundedOutlinBox
+              label="Brunch"
+              to="https://brunch.co.kr/@dotori"
+              external
+            />
+          </div>
+        </Header>
+        <base.VerticalSpacer size={20} />
+
+        <PostListWrapper>
+          {data.allMarkdownRemark.edges.map(({ node }) => (
+            <PostListItem slug={node.fields.slug} tag={node.frontmatter.keyword} />
+          ))}
+        </PostListWrapper>
       </ContentWrapper>
     </Wrapper>
   )
