@@ -23,6 +23,14 @@ module.exports = {
         // Add any options here
       },
     },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Noto Sans KR']
+        }
+      }
+    }
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {
