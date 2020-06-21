@@ -66,7 +66,33 @@ const Resume = () => {
             {'- 앱 아키텍쳐를 설계하였습니다(Redux + MVVM) \n- 서비스의 다양한 기능을 개발하였습니다. \n- Bitrise를 이용한 테스트 및 배포 자동화를 구축하였습니다. \n- 기여도 80%. \n- Stack: Swift, ReSwift, RxSwift, MVVM'}
           </div>
         </Contents>
+
+
+        <SectionDivider title="상세 역량"/>
+        <Contents>
+          <div className="sublabel">사용가능 언어</div>
+            Kotlin, Swift, Typescript, Javascript(ES6), Java, Python, CSS, C, C++ 
+
+          <VerticalSpacer size={12}/>
+          <div className="sublabel">모바일 앱 개발</div>
+          {'- Native Android, Native iOS, React Native \n- Testable한 아키텍쳐, Clean Architecture에 관심이 많습니다.'}
+
+          <VerticalSpacer size={12}/>
+          <div className="sublabel">서버 개발</div>
+          {'- ExpressJs, Typescript \n- TDD로 개발하는 것을 선호합니다.'}
+
+          <VerticalSpacer size={12}/>
+          <div className="sublabel">웹 프론트 엔드 개발</div>
+          {'- React, Typescript'}
+        </Contents>
         
+
+        <SectionDivider title="기타 경력 및 프로젝트"/>
+
+        <Contents>
+          <div className="sublabel">KT BDAS System with Samsung SDS</div>
+          자바 기반의 데이터베이스 시스템을 구축하였습니다. 수백만명의 사용자 정보를 핸들링하는 데이터베이스 시스템의 성능 향상 프로젝트에 참여하여 개발하였습니다. 
+        </Contents>
 
       </Wrapper>
     </BackgroundWrapper>
