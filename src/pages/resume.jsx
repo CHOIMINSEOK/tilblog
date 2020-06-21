@@ -70,9 +70,14 @@ const Resume = () => {
 }
 
 const Wrapper = styled.div`
-  width: 500px;
+  max-width: 1024px;
+  height: 100%;
   margin: auto;
-  aligh-itemsfont-family: 'Apple SD Gothic Neo', 'Helvetica', 'Arial';
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  line-height: 1.5;
+  color: #4a4a4a;
+  font-family: 'Noto Sans KR';
 `
 
 const Label = styled.p`
